@@ -3,28 +3,18 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceRoot}",
-                "C:\\mingw64\\include",
-                "C:\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include",
-                "C:\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "__GNUC__=5",
-                "__cdecl=__attribute__((__cdecl__))"
+                "_UNICODE"
             ],
-            "intelliSenseMode": "gcc-x64",
-            "browse": {
-                "path": [
-                    "${workspaceRoot}",
-                    "C:\\mingw64\\include",
-                    "C:\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include",
-                    "C:\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
         }
     ],
     "version": 4
