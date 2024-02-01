@@ -20,14 +20,17 @@ For more information, please refer to the following links:
 
 ## Type Notebook
 
-- `size_t` : typedef unsigned long long size_t;
+- [const、constexpr、consteval、constinit](https://www.cppstories.com/2022/const-options-cpp20/)
+- [size of types](https://en.cppreference.com/w/cpp/language/types)
+
+- `static_cast` : return a value of **target-type** by expression `static_cast<target-type>(expression)`
+- `size_t` : typedef **unsigned long long** size_t
 
 ---
 
 ## Tool libraries
 
-- Print boolean as string
+> A complete reference : [C++ Reference](https://en.cppreference.com/w/cpp)
 
-    ```c++
-    cout << sstd::boolalpha;
-    ```
+- **std::boolalpha** : print bool as true or false
+- **std::bitset** : represent a fixed-size sequence of N bits

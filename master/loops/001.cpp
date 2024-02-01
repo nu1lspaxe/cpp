@@ -1,27 +1,25 @@
 #include <bits/stdc++.h>
 
-using namespace std;
-
 const size_t TIMES {10};
 
 int main(int argc, char *argv[])
 {
 
-    cout << "==== Do While for loop ====" << endl;
+    std::cout << "==== Do While for loop ====" << std::endl;
     int curr {0};
     do
     {
-        cout << "curr: " << curr << endl;
+        std::cout << "curr: " << curr << std::endl;
         ++curr;
     } while (curr < TIMES);
 
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << "==== Auto Type deduction ====" << endl;
+    std::cout << "==== Auto Type deduction ====" << std::endl;
     int values[5] {1, 2, 3, 4, 5};
     for (auto v : values)
     {
-        cout << "value: " << v << endl;
+        std::cout << "value: " << v << std::endl;
     }
     
     return 0;
