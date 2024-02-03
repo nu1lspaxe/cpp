@@ -1,52 +1,44 @@
 #include <bits/stdc++.h>
 
-using namespace std;
-
 int main(int argc, char *argv[])
 {
     // No initialize -> supposed to be junk data (random)
     int junk[10];
 
     // Print data: all output is 0
-    cout << "==== Uninitialized Data ====" << endl;
+    std::cout << "==== Uninitialized Data ====" << std::endl;
     for (size_t i{0}; i < 10; ++i)
-    {
-        cout << "junk: " << junk[i] << endl;
-    }
+        std::cout << "junk: " << junk[i] << std::endl;
 
-    cout << endl;
+    std::cout << std::endl;
 
     // Wirte and Print data
-    cout << "==== Written Data ====" << endl;
+    std::cout << "==== Written Data ====" << std::endl;
     for (size_t i{0}; i < 10; ++i)
     {
         junk[i] = (i + 1) * 10;
-        cout << "written: " << junk[i] << endl;
+        std::cout << "written: " << junk[i] << std::endl;
     }
 
-    cout << endl;
+    std::cout << std::endl;
 
     // Declaration as well as Initialize (default is 0)
     int good[10] {};
     // Those undefined will be initial as 0
     int great[10] {1, 2, 3, 4, 5};
 
-    cout << "==== Declaration & Initialize  Data ====" << endl;
+    std::cout << "==== Declaration & Initialize  Data ====" << std::endl;
     for (size_t i{0}; i < 10; ++i)
-    {
-        cout << "good: " << good[i] << ", great: " << great[i] << endl;
-    }
+        std::cout << "good: " << good[i] << ", great: " << great[i] << std::endl;
 
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << "==== Summarize of Great Data ====" << endl;
+    std::cout << "==== Summarize of Great Data ====" << std::endl;
     int sum {};
 
     for (int ele : great)
-    {
         sum += ele;
-    }
-    cout << "Sum: " << sum << endl;
+    std::cout << "Sum: " << sum << std::endl;
 
     return 0;
 }
