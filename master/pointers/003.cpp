@@ -6,10 +6,12 @@ int main()
 
     // initialize all elements as 0
     int *ptr { new(std::nothrow) int[size]{}};
-    delete [] ptr;
+    // delete address from dynamic memory (heap)
+    delete [] ptr;  
 
     // initialize pointer with nullptr
     int *ptr {};
+    // delete address from dynamic memory (heap)
     delete ptr;
 
     int stackInt[size] {1, 2, 3, 4, 5};
