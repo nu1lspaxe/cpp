@@ -20,8 +20,8 @@ int main()
 
     int num {10};
     int *ptr4 {&num};
-    std::cout << "num: " << num << std::endl;
-    std::cout << "num: " << &num << std::endl;
+    std::cout << "num : " << num << std::endl;
+    std::cout << "num : " << &num << std::endl;
     std::cout << "ptr4: " << *ptr4 << std::endl;
     std::cout << "ptr4: " << ptr4 << std::endl;
 
