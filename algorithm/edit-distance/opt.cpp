@@ -5,7 +5,7 @@
 
 int min(int x, int y, int z) { return std::min(std::min(x, y), z); }
 
-void printVecInt(std::vector<int> v)
+void PrintVecInt(std::vector<int> v)
 {
     for (size_t i{0}; i < v.size(); ++i)
     {

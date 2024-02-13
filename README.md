@@ -4,6 +4,7 @@
   - [Debug Configuration](#debug-configuration)
   - [Type Notebook](#type-notebook)
   - [Tool libraries](#tool-libraries)
+  - [Style Guide](#style-guide)
 
 ---
 
@@ -34,3 +35,8 @@ For more information, please refer to the following links:
 
 - **std::boolalpha** : print bool as true or false
 - **std::bitset** : represent a fixed-size sequence of N bits
+
+---
+
+## Style Guide
+> A complete reference : [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)

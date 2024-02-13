@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 template <class T>
-void printArr(const T &arr);
+void PrintArr(const T &arr);
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
         {7, 8, 9}};
 
     std::cout << "Print two dimensional array \n\n";
-    printArr(twoDArr);
+    PrintArr(twoDArr);
 
     int threeDArray[4][2][5]{
         {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}},
@@ -22,7 +22,7 @@ int main()
     };
 
     std::cout << "Print three dimensional array \n\n" ;
-    printArr(threeDArray);
+    PrintArr(threeDArray);
 
     return 0;
 }
@@ -30,7 +30,7 @@ int main()
 // enable_if_t = 0 is so that it has a default value and don't need to pass a value to it when declaring a object of this type.
 // template <class T, std::enable_if_t<std::is_array_v<T>, int> = 0>
 template <class T>
-void printArr(const T &arr)
+void PrintArr(const T &arr)
 {
     // replace enable_if_t with static_assert
     static_assert(std::is_array_v<T>);
@@ -38,7 +38,7 @@ void printArr(const T &arr)
     for (auto &in : arr)
     {
         if constexpr (std::rank_v<T> > 1)
-            printArr(in);
+            PrintArr(in);
         else
             std::cout << in << " ";
     }

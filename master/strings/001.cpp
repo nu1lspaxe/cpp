@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 
-void printStr(std::string str);
+void PrintStr(std::string str)
+{
+    std::cout << "str: " << str << std::endl;
+}
+
 
 int main()
 {
@@ -9,18 +13,18 @@ int main()
     std::cout << "capacity: " << str.capacity() << std::endl;
 
     str.push_back('!');
-    printStr(str);
+    PrintStr(str);
 
     std::string str2{"I'm C, not "};
 
     str.insert(6, str2);
-    printStr(str);
+    PrintStr(str);
 
     str.pop_back();
-    printStr(str);
+    PrintStr(str);
 
     str.erase(6, str.size()-9);
-    printStr(str);
+    PrintStr(str);
 
     str.clear();
     str2.clear();
@@ -29,7 +33,3 @@ int main()
     return 0;
 }
 
-void printStr(std::string str)
-{
-    std::cout << "str: " << str << std::endl;
-}
