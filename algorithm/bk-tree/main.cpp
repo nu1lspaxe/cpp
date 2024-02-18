@@ -10,14 +10,14 @@
 struct Node
 {
     // stores the word of the current Node
-    std::string word;
+    std::string_view word;
 
     // links to other Node in the tree
     int next[2 * LEN];
 
     // Constructors
     Node() {}
-    Node(std::string x) : word(x)
+    Node(std::string_view x) : word(x)
     {
         // Initializing next[i] = 0
         for (size_t i{0}; i < 2 * LEN; ++i)
@@ -38,7 +38,7 @@ int min(int x, int y, int z) { return std::min(std::min(x, y), z); }
 
 // Edit Distance
 // Dynamic-Approach: Table, O(m*n)
-int editDistance(std::string str1, std::string str2)
+int editDistance(std::string_view str1, std::string_view str2)
 {
     int m = str1.length(), n = str2.length();
     
@@ -95,9 +95,9 @@ void add(Node &root, Node &curr)
     }
 }
 
-std::vector<std::string> getSimilarWords(Node &root, std::string &str)
+std::vector<std::string_view> getSimilarWords(Node &root, std::string_view str)
 {
-    std::vector<std::string> res;
+    std::vector<std::string_view> res;
 
     if (root.word == "")
         return res;
@@ -110,14 +110,14 @@ std::vector<std::string> getSimilarWords(Node &root, std::string &str)
     if (dist <= TOL)
         res.push_back(root.word);
 
-    // Iterate over the string having tolerance in range[D-TOL, D+TOL]
+    // Iterate over the string_view having tolerance in range[D-TOL, D+TOL]
     int start = dist - TOL;
     if (start < 0)
         start = 1;
 
     while (start <= dist + TOL)
     {
-        std::vector<std::string> tmp = getSimilarWords(tree[root.next[start]], str);
+        std::vector<std::string_view> tmp = getSimilarWords(tree[root.next[start]], str);
 
         for (auto i : tmp)
             res.push_back(i);
@@ -130,7 +130,7 @@ std::vector<std::string> getSimilarWords(Node &root, std::string &str)
 
 int main()
 {
-    std::string dictionary[] = {
+    std::string_view dictionary[] = {
         "hell", "help", "shell", "smell", "fell",
         "felt", "oops", "pop", "oouch", "halt"};
 
@@ -144,16 +144,16 @@ int main()
         add(ROOT, node);
     }
 
-    std::vector<std::string> match;
+    std::vector<std::string_view> match;
 
-    std::string str1 = "ops";
+    std::string_view str1 = "ops";
     match = getSimilarWords(ROOT, str1);
     std::cout << "Similar words in dictionary for " << str1 << ": ";
     for (auto x: match)
         std::cout << x << " ";
     std::cout << std::endl;
 
-    std::string str2 = "helt";
+    std::string_view str2 = "helt";
     match = getSimilarWords(ROOT, str2);
     std::cout << "Similar words in dictionary for " << str2 << ": ";
     for (auto x: match)

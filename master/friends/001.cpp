@@ -11,7 +11,7 @@ class Transportation
     friend class Station;
 
 public:
-    Transportation(const std::string_view &type, std::string_view color, int years)
+    Transportation(const std::string_view type, std::string_view color, int years)
         : tType{type}, tColor{color}, tYears{years} {}
 
 private:
