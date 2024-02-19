@@ -48,7 +48,7 @@ int minStepToReachTarget(std::vector<int>& knightPos, std::vector<int>& targetPo
     qu.push(cell(knightPos[0], knightPos[1], 0));
     visit[knightPos[0]][knightPos[1]] = true;
 
-    int length { std::sisze(dx) };
+    int length { std::size(dx) };
 
     while (!qu.empty())
     {

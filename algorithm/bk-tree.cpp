@@ -1,3 +1,7 @@
+/**
+ * Reference: https://www.geeksforgeeks.org/bk-tree-introduction-implementation/?ref=gcse
+*/
+
 #include <bits/stdc++.h>
 
 // Maximum number of words in dict[]
