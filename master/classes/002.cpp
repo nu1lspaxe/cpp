@@ -9,49 +9,49 @@ class Person
 {
 public:
     Person() = default;
-    Person(std::string_view person_name, std::string_view person_id, int person_age);
+    Person(std::string_view name, std::string_view id, int age);
     ~Person();
 
     void PrintInfo()
     {
-        std::cout << "Person " << this << ": [name: " << name << ", age: " << age << "]" << std::endl;
+        std::cout << "Person " << this << ": [name: " << _name << ", age: " << _age << "]" << std::endl;
     }
 
     // Setter (chained calls using references)
     Person& set_name(std::string name)
     {
-        this->name = name;
+        this->_name = name;
         return *this;
     }
 
     Person& set_age(int age)
     {
-        this->age = age;
+        this->_age = age;
         return *this;
     }
 
 
 private:
-    std::string_view name;
-    std::string_view *id {nullptr};
-    int age;
+    std::string_view _name;
+    std::string_view *_id {nullptr};
+    int _age;
 };
 
-Person::Person(std::string_view person_name, std::string_view person_id, int person_age)
+Person::Person(std::string_view name, std::string_view id, int age)
 {
-    name = person_name;
-    id = new std::string_view{person_id};
-    age = person_age;
+    _name = name;
+    _id = new std::string_view{id};
+    _age = age;
 
-    std::cout << "New person id: " << *id << " has been created" << std::endl;
+    std::cout << "New person id: " << *this->_id << " has been created" << std::endl;
 }
 
 // Before out of scope, deconstructor will be called automatically
 // In this case, the scope is main()
 Person::~Person()
 {
-    std::cout << "Perosn id: " << *id << " has been deleted" << std::endl;
-    delete id;
+    std::cout << "Perosn id: " << *this->_id << " has been deleted" << std::endl;
+    delete this->_id;
 }
 
 int main()

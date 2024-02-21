@@ -9,16 +9,16 @@ public:
 
 
 private:
-    std::string_view name;
+    std::string_view _name;
     std::string_view *id;
-    int age;
+    int _age;
 };
 
 Person::Person(std::string_view person_name, std::string_view person_id, int person_age)
 {
-    name = person_name;
+    _name = person_name;
     id = new std::string_view{person_id};
-    age = person_age;
+    _age = person_age;
 
     std::cout << "New person id: " << *id << " has been created" << std::endl;
 }

@@ -17,17 +17,17 @@ cppreference:
 class Point
 {
 private:
-    double *x{};
-    double *y{};
+    double *_x{};
+    double *_y{};
 
     void invalidate()
     {
-        x = nullptr;
-        y = nullptr;
+        _x = nullptr;
+        _y = nullptr;
     }
 
 public:
-    Point(double x_param, double y_param);
+    Point(double x, double y);
     ~Point();
 
     // Copy constructor
@@ -37,28 +37,28 @@ public:
     Point(Point &&source_point);
 
     // Setters
-    void set_x(double x) { *(this->x) = x; }
-    void set_y(double y) { *(this->y) = y; }
+    void set_x(double x) { *(this->_x) = x; }
+    void set_y(double y) { *(this->_y) = y; }
     // Getters
-    double *get_x() const { return this->x; }
-    double *get_y() const { return this->y; }
+    double *get_x() const { return this->_x; }
+    double *get_y() const { return this->_y; }
 
     double *steal_x()
     {
-        double *new_x = x;
-        x = nullptr;
+        double *new_x = _x;
+        _x = nullptr;
         return new_x;
     }
 
     double *steal_y()
     {
-        double *new_y = y;
-        y = nullptr;
+        double *new_y = _y;
+        _y = nullptr;
         return new_y;
     }
 
     // Utilities
-    void PrintInfo() const { std::cout << "(x:" << *x << ",y:" << *y << ")" << std::endl; }
+    void PrintInfo() const { std::cout << "(x:" << *_x << ",y:" << *_y << ")" << std::endl; }
 };
 
 #endif

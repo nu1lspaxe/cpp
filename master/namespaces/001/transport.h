@@ -13,13 +13,13 @@ namespace City
 
         // Constructor
         Transport();
-        Transport(Model model, Color color, std::string_view license);
-        // Deconstructor
-        ~Transport();
+        Transport(Model model, Color color, int year, std::string_view license);
 
     private:
-        
-
+        Model _model;
+        Color _color;
+        int _year;
+        std::string_view _license;
     };
 }
 

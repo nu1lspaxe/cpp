@@ -12,11 +12,11 @@ class Transportation
 
 public:
     Transportation(const std::string_view type, std::string_view color, int years)
-        : tType{type}, tColor{color}, tYears{years} {}
+        : _type{type}, _color{color}, tYears{years} {}
 
 private:
-    std::string_view tType;
-    std::string_view tColor;
+    std::string_view _type;
+    std::string_view _color;
     int tYears;
 };
 
@@ -25,7 +25,7 @@ class Station
 public:
     void PrintDetails(const Transportation &t) const
     {
-        std::cout << t.tType << " is " << t.tColor << ", years: " << t.tYears << std::endl;
+        std::cout << t._type << " is " << t._color << ", years: " << t.tYears << std::endl;
     }
 };
 

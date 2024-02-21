@@ -15,8 +15,8 @@ namespace Workstation
         int GetCount();
 
     private:
-        char n_id;
-        int n_count;
+        char _id;
+        int _count;
     };
 }
 

@@ -1,60 +1,60 @@
 #include "person.h"
 
-Person::Person(std::string_view name_param, Gender gender_param, int age_param, double weight_param, double height_param)
+Person::Person(std::string_view name, Gender gender, int age, double weight, double height)
 {
-    name = name_param;
-    gender = gender_param;
-    age = age_param;
-    weight = weight_param;
-    height = height_param;
+    _name = name;
+    _gender = gender;
+    _age = age;
+    _weight = weight;
+    _height = height;
 }
 
 double Person::GetBMI() const
 {
-    return weight / (height * height);
+    return _weight / (_height * _height);
 }
 
-void Person::set_name(std::string_view name_param)
+void Person::set_name(std::string_view name)
 {
-    this->name = name_param;
+    this->_name = name;
 }
-void Person::set_gender(Gender gender_param)
+void Person::set_gender(Gender gender)
 {
-    this->gender = gender_param;
+    this->_gender = gender;
 }
-void Person::set_age(int age_param)
+void Person::set_age(int age)
 {
-    age = age_param;
+    _age = age;
 }
-void Person::set_weight(double weight_param)
+void Person::set_weight(double weight)
 {
-    weight = weight_param;
+    _weight = weight;
 }
-void Person::set_height(double height_param)
+void Person::set_height(double height)
 {
-    height = height_param;
+    _height = height;
 }
 
 std::string_view Person::get_name() const
 {
-    return this->name;
+    return this->_name;
 }
 
 Gender Person::get_gender()
 {
-    return this->gender;
+    return this->_gender;
 }
 int Person::get_age()
 {
     // Mutable
-    ++this->age;
-    return age;
+    ++this->_age;
+    return _age;
 }
 int Person::get_weight()
 {
-    return weight;
+    return _weight;
 }
 int Person::get_height()
 {
-    return height;
+    return _height;
 }
